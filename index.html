@@ -3,11 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brittney's Library</title>
+  <title>My Library Tracker</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="scripts.js"></script>
+  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Sora">
+  <link rel="icon" type="image/svg" href="/img/library-outline.svg">
+  
 </head>
 <body>
-  
+  <header>
+    <h1>My Library Tracker</h1>
+  </header>
+  <div id="cards">
+    
+  </div>
+  <button type="submit" id="addBtn">+</button>
+  <dialog id="addDialog">
+    <form>
+      <p>Add a book:</p>
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text" />
+      <label for="author">Author</label>
+      <input id="author" name="author" type="text" />
+      <label for="pages">Number of Pages</label>
+      <input id="pages" name="pages" type="number" />
+      <div id="radioSection">
+        <p>Have you read this book?</p>
+        <label for="haveRead">Yes</label>
+        <input id="haveRead" name="haveRead" type="radio" value="I have read"/>
+        <label for="haveNotRead">No</label>
+        <input id="haveNotRead" name="haveRead" type="radio" value="I have not read"/>
+      </div>
+      
+    <div>
+      <button value="cancel" formmethod="dialog">Cancel</button>
+      <button id="confirmBtn" value="default">Add Book</button>
+    </div>
+
+    </form>
+  </dialog>
+  <footer>
+    <p>&#169; 2023 Brittney Epperson &bull; The Odin Project</p>
+  </footer>
+  <script src="scripts.js"></script>
 </body>
 </html>

@@ -1,13 +1,53 @@
-function Book(title, author, pages, read) {
+const button = document.querySelector("button");
+const cards = document.querySelector("#cards");
+const addDialog = document.getElementById("addDialog");
+const confirmBtn = document.getElementById("confirmBtn");
+const form = document.querySelector("form");
+
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const pages = document.getElementById("pages");
+const haveRead = document.getElementById("haveRead");
+
+button.addEventListener("click", function() {
+  addDialog.showModal();
+});
+
+confirmBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+  addBooktoLibrary(title.value, author.value, pages.value, haveRead.value);
+  showBooks();
+  addDialog.close();
+});
+
+const myLibrary = [];
+
+function Book(title, author, pages, haveRead) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
+  this.haveRead = haveRead;
   this.info = function() {
-    return `${title} by ${author}, ${pages} pages, ${read}`
+    return `${title} by ${author}, ${pages} pages, ${haveRead}.`
   };
 }
 
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien',  295, 'not read yet');
+function addBooktoLibrary(title, author, pages, haveRead) {
+  let book = new Book(title, author, pages, haveRead);
+  myLibrary.push(book);
+  return myLibrary;
+}
 
-console.log(theHobbit.info());
+addBooktoLibrary('A Game of Thrones', 'George R. R. Martin', 694, 'read');
+addBooktoLibrary('The Hobbit', 'J.R.R. Tolkien',  304, 'not read yet');
+
+function showBooks() {
+  cards.innerHTML = "";
+  for(let i = 0; i < myLibrary.length; i++) {
+    const card = document.createElement("div");
+    card.id = "card";
+    card.textContent = myLibrary[i].info();
+    cards.appendChild(card);
+  }
+}
+showBooks();

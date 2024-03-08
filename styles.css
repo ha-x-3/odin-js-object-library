@@ -4,3 +4,74 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Sora";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: rgba(218,218,226,0.8);
+}
+
+header {
+  background-color: rgb(246, 166, 160);
+  height: 100px;
+  width: 100vw;
+  padding: 20px;
+  box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.8);
+}
+
+#addBtn {
+  font-size: 4em;
+  width: 75px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 25px;
+  background-color: rgba(233,191,191,0.9);
+}
+
+#addBtn:hover {
+  transform: scale(1.5);
+  background-color: rgb(246, 166, 160);
+}
+
+#cards {
+  width: 98vw;
+  height: 50vh;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  overflow: auto;
+}
+
+#card {
+  height: 150px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  background: rgb(218,218,226);
+background: linear-gradient(300deg, rgba(218,218,226,1) 0%, rgba(233,191,191,0.8) 4%, rgba(246,166,160,0.8) 92%, rgba(147,146,145,0.8) 100%);
+  box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.8);
+}
+
+dialog {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.8);
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  padding: 1.6rem;
+  background-color: rgb(246, 166, 160);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
