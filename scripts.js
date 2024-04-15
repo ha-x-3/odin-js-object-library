@@ -52,12 +52,26 @@ addBooktoLibrary(
   'I have not read'
 );
 
+//Add a remove button to each book card
+cards.addEventListener("click", (event) => {
+  if (event.target.classList.contains("removeBtn")) {
+    const index = event.target.dataset.index;
+    myLibrary.splice(index, 1);
+    showBooks();
+  }
+});
+
 function showBooks() {
   cards.innerHTML = "";
   for(let i = 0; i < myLibrary.length; i++) {
     const card = document.createElement("div");
     card.id = "card";
     card.textContent = myLibrary[i].info();
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.classList.add("removeBtn");
+    removeBtn.dataset.index = i;
+    card.appendChild(removeBtn);
     cards.appendChild(card);
   }
 }
