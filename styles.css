@@ -68,6 +68,7 @@ header>img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 15px;
   background: linear-gradient(300deg, rgb(187,162,118) 0%, rgb(39, 105, 22) 92%, rgb(147,146,145) 100%);
