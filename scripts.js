@@ -38,8 +38,19 @@ function addBooktoLibrary(title, author, pages, haveRead) {
   return myLibrary;
 }
 
-addBooktoLibrary('A Game of Thrones', 'George R. R. Martin', 694, 'read');
-addBooktoLibrary('The Hobbit', 'J.R.R. Tolkien',  304, 'not read yet');
+addBooktoLibrary(
+	'A Game of Thrones',
+	'George R. R. Martin',
+	694,
+	'I have read'
+);
+
+addBooktoLibrary(
+  'The Hobbit',
+  'J.R.R. Tolkien',
+  304,
+  'I have not read'
+);
 
 function showBooks() {
   cards.innerHTML = "";
@@ -50,4 +61,5 @@ function showBooks() {
     cards.appendChild(card);
   }
 }
+
 showBooks();
