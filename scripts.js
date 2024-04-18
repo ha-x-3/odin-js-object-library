@@ -16,12 +16,7 @@ button.addEventListener("click", function() {
 
 confirmBtn.addEventListener("click", function(event) {
   event.preventDefault();
-  let readStatus;
-  if (haveRead.checked) {
-		readStatus = 'I have read';
-  } else {
-		readStatus = 'I have not read';
-  }
+  let readStatus = document.querySelector('input[name="haveRead"]:checked').value;
   addBooktoLibrary(title.value, author.value, pages.value, readStatus);
   showBooks();
   addDialog.close();
@@ -29,18 +24,20 @@ confirmBtn.addEventListener("click", function(event) {
 
 const myLibrary = [];
 
-function Book(title, author, pages, haveRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.haveRead = haveRead;
-  this.info = function() {
-    return `${title} by ${author}, ${pages} pages, ${haveRead}.`
-  };
-  this.toggleRead = function () {
-		this.haveRead =
-			this.haveRead === 'I have read' ? 'I have not read' : 'I have read';
-  };
+class Book {
+  constructor(title, author, pages, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.haveRead = haveRead;
+    this.info = function () {
+      return `${this.title} by ${this.author}, ${this.pages} pages, ${this.haveRead}.`;
+    };
+    this.toggleRead = function () {
+      this.haveRead =
+        this.haveRead === 'I have read' ? 'I have not read' : 'I have read';
+    };
+  }
 }
 
 function addBooktoLibrary(title, author, pages, haveRead) {
@@ -85,7 +82,7 @@ function showBooks() {
     const card = document.createElement("div");
     card.id = "card";
     card.textContent = myLibrary[i].info();
-    card.classList.toggle("unread", myLibrary[i].haveRead === "I have not read");
+    card.classList.add(myLibrary[i].haveRead === 'I have read' ? 'read' : 'unread');
 
     const readSlider = document.createElement("label");
     readSlider.classList.add('read-slider', 'switch');
