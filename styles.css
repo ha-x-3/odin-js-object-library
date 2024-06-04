@@ -1,183 +1,193 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  font-family: "Sora";
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 100vh;
-  background-image: url("./img/library.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-blend-mode: lighten;
+	font-family: 'Sora';
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100vh;
+	background-image: url('./img/library.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-blend-mode: lighten;
 }
 
 header {
-  background-color: rgba(39, 105, 22, 0.9);
-  height: 100px;
-  width: 100vw;
-  padding: 20px;
-  box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+	background-color: rgba(39, 105, 22, 0.9);
+	height: 100px;
+	width: 100vw;
+	padding: 20px;
+	box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 
-header>img {
-  padding-right: 10px;
+header > img {
+	padding-right: 10px;
 }
 
 #addBtn {
-  font-size: 4em;
-  width: 75px;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: 25px;
-  background-color: rgba(39, 105, 22, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 8px;
+	font-size: 4em;
+	width: 75px;
+	border-radius: 50%;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 25px;
+	background-color: rgba(39, 105, 22, 0.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 8px;
 }
 
 #addBtn:hover {
-  transform: scale(1.5);
-  background-color: rgba(39, 105, 22, 0.8);
+	transform: scale(1.5);
+	background-color: rgba(39, 105, 22, 0.8);
 }
 
 #cards {
-  width: 98vw;
-  height: 50vh;
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  overflow: auto;
+	width: 98vw;
+	height: 50vh;
+	display: grid;
+	gap: 25px;
+	grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+	overflow: auto;
 }
 
 #card {
-  height: 150px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 15px;
-  background: linear-gradient(300deg, rgb(187,162,118) 0%, rgb(39, 105, 22) 92%, rgb(147,146,145) 100%);
-  box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.8);
-  font-weight: bold;
-  position: relative;
+	height: 150px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 15px;
+	background: linear-gradient(
+		300deg,
+		rgb(187, 162, 118) 0%,
+		rgb(39, 105, 22) 92%,
+		rgb(147, 146, 145) 100%
+	);
+	box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.8);
+	font-weight: bold;
+	position: relative;
 }
 
 #card .remove-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 
 #card .read-slider {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
 }
 
 dialog {
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.8);
-  width: 300px;
-  height: 300px;
-  margin: auto;
-  padding: 1.6rem;
-  background-color: rgb(39, 105, 22);
+	border: none;
+	border-radius: 8px;
+	box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.8);
+	width: 300px;
+	height: 300px;
+	margin: auto;
+	padding: 1.6rem;
+	background-color: rgb(39, 105, 22);
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 }
 
 footer {
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 100%;
-  text-align: center;
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 100%;
+	text-align: center;
 }
 
-small>a {
-  text-decoration: none;
-  color: rgb(39, 105, 22);
+small > a {
+	text-decoration: none;
+	color: rgb(39, 105, 22);
 }
 
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+	position: absolute;
+	content: '';
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+	background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+	box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+	border-radius: 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 #card.unread {
-  background: linear-gradient(300deg, rgb(147, 146, 145) 0%, rgb(187, 162, 118) 92%, rgb(39, 105, 22) 100%);
-  color: #fff;
+	background: linear-gradient(
+		300deg,
+		rgb(147, 146, 145) 0%,
+		rgb(187, 162, 118) 92%,
+		rgb(39, 105, 22) 100%
+	);
+	color: #fff;
 }
